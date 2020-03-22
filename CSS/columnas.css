@@ -1,0 +1,14 @@
+nav{
+    background: burlywood;
+    padding: 20px;
+}
+.columna{
+    background: teal;
+    color: beige;
+    padding: 10px;
+    width: 25%;
+    margin-left: 20px;
+}
+.padre{
+    display:flex;
+}

@@ -1,0 +1,12 @@
+button{
+    background: blue;
+    color: orange;
+    width: 150px;
+}
+button:hover{
+    background: black;
+    color:wheat;
+}
+button:active{
+    background: green;
+}

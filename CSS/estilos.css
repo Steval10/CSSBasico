@@ -1,0 +1,15 @@
+h1{
+    color: blue;
+    font-size: 20px;
+}
+#unico{
+    color: rgb(58, 58, 148);
+    font-size: 40px;
+}
+.newcolor{
+    color:green;
+    font-size: 30px;
+}
+.fondo{
+    background: yellow;
+}
