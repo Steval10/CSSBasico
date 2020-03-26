@@ -1,0 +1,49 @@
+.padre{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* respeta el ancho de los contenedores*/
+    text-align: center;
+    padding: 10px;
+}
+.header, .articulo, .izquierda, .derecha, .footer{
+    flex-grow: 1;  /* para abarcar el 100%*/
+    flex-basis: 100%; 
+    padding: 10px;
+}
+.header{
+    background: yellow;
+}
+.articulo{
+    background: blue;
+}
+.izquierda{
+    background: red;
+}
+.derecha{
+    background: gold;
+}
+.footer{
+    background: paleturquoise;
+}
+@media all and (min-width: 600px){
+    .aside{
+        flex: 1 1 auto;
+    }
+}
+@media all and (min-width: 800px){
+    .articulo{ /* el articulo va a ser dos veces mayor a izquierda y derecha*/
+        flex:2 0;
+    }
+    .izquierda{
+        order: 1;
+    }
+    .articulo{
+        order: 2;
+    }
+    .derecha{
+        order: 3;
+    }
+    .footer{
+        order: 4;
+    }
+}
