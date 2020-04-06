@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue primero</title>
+</head>
+<body>
+   <div id="app">
+        <h1>{{titulo}}</h1>
+        <input type="text" v-model="nuevocarro" @keyup.enter="agregarcarro">
+        <button @click="agregarcarro">Agregar</button>
+        <ul>
+            <li v-for="marca of carros">
+                <input type="number" v-model.number="marca.cantidad">
+                {{marca.nombre}}
+                <button @click="marca.cantidad++">+</button>
+                <span v-if = "marca.cantidad == 0">
+                    No hay disponible
+                </span>
+            </li>
+            
+        </ul>
+        <h4>Total = {{sumarCarros}}</h4>
+   </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js01.js"></script>
+</body>
+</html>
