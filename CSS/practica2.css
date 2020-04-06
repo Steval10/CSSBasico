@@ -1,103 +1,180 @@
 * {
-    margin: 10px;
-    padding: 10px;
+    margin: 0px;
+    padding: 1px;
     box-sizing: border-box;
     /*para que no se desborden las cajas */
 }
-
+body{
+    font-family: 'Vollkorn', serif;
+}
+a{
+    text-decoration: none;
+}
+h3{
+    color: aliceblue;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.margen-interno{
+    padding: 0px 50px;
+}
 .padre {
-    background: gray;
+    
     display: flex;
     flex-flow: column nowrap; /* para que todo se adapte al tamaño establecido */
 }
 
     .header {
-        background: yellow;
+        background: url(imagenes/fondo1.jpg);
+        background-position: center;
+        background-attachment: contain;
+        background-size: cover;
         display: flex;
         flex-flow: column nowrap;
     }
 
         .menu {
-            background: blue;
+            background: rgba(0,0,0,.1);
             display: flex;
             flex-flow: row nowrap;
-            height: 100px;
+            height: 50px;
             align-items:  center;
+            border-bottom: 1px solid rgba(247, 200, 200, 0.5)
         }
 
             .logo {
                 order: 1;
-                background: red;
+                /* background: red; */
                 flex: 1 1 auto;
-                height: 20px;
+                            
             }
-
+                
+                .logo a{
+                    color: aliceblue;
+                    font-size: 18px;
+                    padding: 0 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                  
+                }
+                .logo a:hover{
+                    color:red;
+                }
             .nav {
                 order: 2;
-                background: goldenrod;
+                /* background: goldenrod; */
                 flex: 5 1 auto;
-                height: 20px;
+                
             }
-
+                .nav a{
+                    color: aliceblue;
+                    font-size: 10px;
+                    text-transform: uppercase;
+                    padding: 0 10px;
+                    letter-spacing: 2px;
+                }
+                .nav a:hover{
+                    color: red;
+                }
             .social {
                 order: 3;
-                background: palegreen;
+                display: flex;
                 flex: 1 1 auto;
-                height: 20px;
+                
             }
-
+                .social a{
+                    font-size: 18px;
+                    color: aliceblue;
+                    padding: 0 5px;
+                }
+                .social a:hover{
+                    color: red;
+                }
         .texto-principal {
-            background: white;
+            height: 400px;
+            display: flex;
+            align-items: center;
         }
 
             h1 {
-                background: magenta;
+                font-family: 'Permanent Marker', cursive;
+                font-size: 21px;
+                color: aliceblue;
+                font-weight: 400;
+                text-align: center;
+                line-height: 1.6;
+                
             }
 
     .section {
-        background: darkgoldenrod;
+        background: rgb(0, 0, 0);
         display: flex;
         flex-flow: row nowrap;
         
     }
 
         .articulos {
-            background: aqua;
+            background: black;
             flex: 2 1 auto;
             display: flex;
             flex-flow: row wrap;
         }
 
             .article {
-                background: sandybrown;
                 flex: 1 1 40%;
-            }
+                color: aliceblue;
+                font-size: 13px;
+                letter-spacing: 1px;
 
+            }
+                .article img{
+                    width: 100%;
+                }
             .navegacion {
-                background: khaki;
+                background: rgb(0, 0, 0);
                 flex: 1 1 100%;
             }
-
+                .navegacion a{
+                    color: aliceblue;
+                    font-size: 12px;
+                    padding: 0 10px;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                .navegacion a:hover{
+                    color: red;
+                }
         .aside {
-            background: teal;
+            background: rgb(0, 0, 0);
             flex: 1 1 auto;
+            
         }
-
-            .publicidad {
-                background: greenyellow;
+            .aside img{
+               width: 100%;
             }
-
+            .publicidad {
+                background: rgb(0, 0, 0);
+            }
+            
     .footer {
-        background: indigo;
+        background: black;
         display: flex;
         justify-content: center;
     }
 
         .pie {
-            background: wheat;
+            
             width: 300px;
            
         }
+            .pie a{
+                color: aliceblue;
+                font-size: 12px;
+                padding: 0 10px;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
 @media all and (max-width:800px){
     .section{
         flex-direction: column;
