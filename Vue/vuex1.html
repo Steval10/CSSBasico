@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vuex Primero</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuex@3.0.1/dist/vuex.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <xxx></xxx>
+
+    </div>
+
+    <script>
+
+        Vue.component('xxx', {
+            template:
+                `
+            <div class="m-3 l.">
+             <h4>Calculator 1</h4>
+             <h4>{{numeroX}}</h4>
+             <xxxhijo></xxxhijo>
+            </div>
+
+            `,
+            computed: {
+                ...Vuex.mapState(['numeroX'])
+            }
+        })
+
+        Vue.component('xxxhijo', {
+            template:
+                `
+            <div class="mt-3">
+             <h4>Calculator 2</h4>
+             <h4>{{numeroX}}</h4>
+             <button class="btn btn-success" @click="sumar">+</button>
+             <button class="btn btn-danger" @click="restar(4)">-</button>
+             <button @click="obtenerCursos">Cursos</button>
+             <ul v-for = "item of cursos">
+              <li>
+                {{item.nombre}}
+              </li>   
+             </ul>
+            </div>
+            `,
+            methods: {
+                ...Vuex.mapMutations(['sumar', 'restar']),
+                ...Vuex.mapActions(['obtenerCursos'])
+            },
+            computed: {
+                ...Vuex.mapState(['numeroX', 'cursos'])
+            }
+
+        })
+        const store = new Vuex.Store({
+            state: {
+                numeroX: 10,
+                cursos: []
+            },
+            mutations: {
+                sumar(state) {
+                    state.numeroX++
+                },
+                restar(state, n) {
+                    state.numeroX -= n
+                },
+                llenarCursos(state, cursoAccion) {
+                    state.cursos = cursoAccion
+                }
+            },
+            actions: {
+                obtenerCursos: async function ({commit}) {
+                    const data = await fetch('cursos.json')
+                    const cursos = await data.json();
+                    commit('llenarCursos', cursos)
+                }
+            }
+        })
+    </script>
+
+
+
+    <script>
+        new Vue({
+            el: '#app',
+            store: store
+
+        })
+    </script>
+</body>
+
+</html>

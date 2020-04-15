@@ -1,0 +1,14 @@
+[
+    {
+        "nombre": "JS",
+        "ID": 1
+    },
+    {
+        "nombre": "CSS",
+        "ID": 2
+    },
+    {
+        "nombre": "Vue",
+        "ID": 3
+    }
+]
